@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Pendaftaran KP</string>
+    <string name="Home">Home</string>
+    <string name="AddPost">Add Post</string>
+    <string name="MoodStatistic">Mood Statistics</string>
+    <string name="Settings">Settings</string>
+    <string name="welcome">Selamat Datang</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="log_in">Masuk</string>
+    <string name="sign_up">Daftar</string>
+    <string name="sign_up2">Belum Punya Akun? Daftar Dulu</string>
+    <string name="name">Nama</string>
+    <string name="nim">Nim</string>
+    <string name="title">Judul KP</string>
+    <string name="dospem">Dosen Pembimbing</string>
+    <string name="dospen">Dosen Penguji</string>
+    <string name="date">Tanggal</string>
+    <string name="save">Simpan</string>
+    <string name="edit">Edit</string>
+    <string name="account">Account</string>
+    <string name="about_app">About App</string>
+    <string name="log_out">Keluar</string>
+    <string name="form">Form Daftar Sidang KP</string>
+    <string name="welcomeBack">Selamat Datang di Aplikasi Daftar Sidang KP</string>
+    <string name="noFormData">Anda belum daftar sidang</string>
+    <string name="logout">Logout</string>
+</resources>
