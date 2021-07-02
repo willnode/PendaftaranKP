@@ -27,17 +27,39 @@ class FormActivity : AppCompatActivity() {
         input_dospem.setText(user.dospem)
         input_dospen.setText(user.dospen)
         input_date.setText(user.date)
+        var nameTest = """^[-a-zA-Z .']+$""".toRegex()
+        var nimTest = """^\d{12}$""".toRegex()
+        var dateTest = """^\d{2}-\d{2}-\d{4}$""".toRegex()
+
+
+
         btn_send.setOnClickListener {
             try {
-                if (input_name.text.toString() == "" || input_nim.text.toString() == "" || input_title.text.toString() == "" || input_dospem.text.toString() == "" || input_dospen.text.toString() == "" || input_date.text.toString() == "") {
+                var name = input_name.text.toString().trim()
+                var nim = input_nim.text.toString().trim()
+                var title = input_title.text.toString().trim()
+                var dospem = input_dospem.text.toString().trim()
+                var dospen = input_dospen.text.toString().trim()
+                var date = input_date.text.toString().trim()
+                if (name == "" || nim == "" || title == "" || dospem == "" || dospen == "" || date == "") {
                     Toast.makeText(applicationContext, "Silahkan lengkapi data dulu", Toast.LENGTH_SHORT).show()
+                } else if (!nameTest.matches(name)) {
+                    Toast.makeText(applicationContext, "Nama harus alfabet atau spasi, titik, strip dan petik satu", Toast.LENGTH_SHORT).show()
+                } else if (!nimTest.matches(nim)) {
+                    Toast.makeText(applicationContext, "Nama harus alfabet atau spasi, titik, strip dan petik satu", Toast.LENGTH_SHORT).show()
+                } else if (!nameTest.matches(dospem)) {
+                    Toast.makeText(applicationContext, "Nama harus alfabet atau spasi, titik, strip dan petik satu", Toast.LENGTH_SHORT).show()
+                } else if (!nameTest.matches(dospen)) {
+                    Toast.makeText(applicationContext, "Nama harus alfabet atau spasi, titik, strip dan petik satu", Toast.LENGTH_SHORT).show()
+                } else if (!dateTest.matches(date)) {
+                    Toast.makeText(applicationContext, "Format tanggal harus dd-mm-yyyy", Toast.LENGTH_SHORT).show()
                 } else {
-                    user.name = input_name.text.toString()
-                    user.nim = input_nim.text.toString()
-                    user.title = input_title.text.toString()
-                    user.dospem = input_dospem.text.toString()
-                    user.dospen = input_dospen.text.toString()
-                    user.date = input_date.text.toString()
+                    user.name = name
+                    user.nim = nim
+                    user.title = title
+                    user.dospem = dospem
+                    user.dospen = dospen
+                    user.date = date
                     helper.dbo.save(user)
 
                     val intent = Intent(this, ShowActivity::class.java)
